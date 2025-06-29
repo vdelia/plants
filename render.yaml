@@ -61,6 +61,9 @@ services:
   - type: keyvalue
     plan: free
     name: n8n-cache
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: allow all
 
 
 databases:
