@@ -51,6 +51,12 @@ services:
         fromDatabase:
           name: n8n-db
           property: user
+            # Editable! Add Redis Key Value URL
+      - key: REDIS_URL
+        fromService:
+          name: n8n-cache       # <-- matches the service name below
+          property: internalConnectionString
+
 
 databases:
   - name: n8n-db
@@ -63,3 +69,9 @@ databases:
     # setting the `diskSizeGB` property.
     #
     # diskSizeGB: 5
+
+services:
+  - type: keyvalue
+    plan: free
+    name: n8n-cache
+
