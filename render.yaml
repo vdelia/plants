@@ -54,8 +54,9 @@ services:
             # Editable! Add Redis Key Value URL
       - key: REDIS_URL
         fromService:
-          name: n8n-cache       # <-- matches the service name below
-          property: internalConnectionString
+          name: n8n-cache
+          type: keyvalue
+          property: connectionString
 
   - type: keyvalue
     plan: free
