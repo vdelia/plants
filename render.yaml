@@ -57,6 +57,10 @@ services:
           name: n8n-cache       # <-- matches the service name below
           property: internalConnectionString
 
+  - type: keyvalue
+    plan: free
+    name: n8n-cache
+
 
 databases:
   - name: n8n-db
@@ -69,9 +73,3 @@ databases:
     # setting the `diskSizeGB` property.
     #
     # diskSizeGB: 5
-
-services:
-  - type: keyvalue
-    plan: free
-    name: n8n-cache
-
